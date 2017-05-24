@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"/>
+
+	<link rel="stylesheet" href="{% static "bootstrap.min.css" %}" type="text/css"/>
+	<link rel="stylesheet" href="{% static "static_dev/css/index.css" %}" type="text/css"/>
+
+
+
+
+	<title></title>
+</head>
+
+<body>
+	<div class="general-container">
+		<div class="container top-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="title text-center">
+						<h1>Hi! Our shop is opening soon!</h1>
+						<h1>Please leave your contacts</h1>
+
+						<div>
+							<form action="" method="POST" class="form-inline"> {% csrf_token %}
+								<div class="form-group">
+									<label>Name: </label>
+									<input type="text" name="{{ form.name.name }}" class="form-control">
+
+								</div>
+								<div class="form-group">
+									<label>E-mail: </label>
+									<input type="email" name="{{ form.email.name }}" class="form-control">
+								</div>
+								<button type="submit" class="btn btn-success">Send</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
